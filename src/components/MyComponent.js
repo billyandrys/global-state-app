@@ -1,15 +1,19 @@
-import React, { useContext} from 'react'
+import React from 'react'
 
-import {StoreContext} from '../store/StoreProvider'
+import { useDispatch, useStore} from '../store/StoreProvider'
 import { type } from '../store/StoreReducer'
 
 
 
 function MyComponent() {
 
-const [store, dispatch]  = useContext(StoreContext)
+//const [store, dispatch]  = useContext(StoreContext)
+const store = useStore()
+const dispatch = useDispatch()
 
 const { user, products} = store
+
+
  
   return (
     <div>
